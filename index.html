@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quinta Oasis · Alquiler por día en Paraguay</title>
+  <meta name="description" content="Quinta con pileta y quincho para reunirte con tu familia y amigos. Mirá los días libres y pedí tu fecha.">
+  <meta name="theme-color" content="#0a4f58">
+  <link rel="icon" type="image/png" href="images/icono.png">
+  <meta property="og:title" content="Quinta Oasis">
+  <meta property="og:description" content="Mirá los días libres y pedí tu fecha.">
+  <meta property="og:image" content="images/logo-oasis-azul.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#quinta">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#inicio" aria-label="Quinta Oasis, ir al inicio">
+        <img class="brand__logo" src="images/logo-oasis-blanco.png" alt="Oasis" width="600" height="380">
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="sr">Menú</span>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Principal">
+        <a href="#quinta">La quinta</a>
+        <a href="#galeria">Fotos</a>
+        <a href="#como">Cómo reservar</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#preguntas">Preguntas</a>
+        <a class="btn btn--small" href="#reservar">Ver fechas libres</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Inicio -->
+    <section class="hero" id="inicio">
+      <div class="hero__water" aria-hidden="true"></div>
+      <div class="wrap hero__content">
+        <h1 class="hero__title">Tu día de pileta, parrilla y sombra.</h1>
+        <p class="hero__lead">Quinta para juntarte con tu familia y amigos. Mirá qué días están libres y pedí tu fecha en un minuto.</p>
+        <div class="hero__actions">
+          <a class="btn btn--lg" href="#reservar">Ver fechas libres</a>
+          <a class="btn btn--ghost btn--lg" href="#quinta">Conocer la quinta</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Capacidad</dt><dd id="factCapacity">150 personas</dd></div>
+          <div><dt>Precio</dt><dd id="factPrice">Consultá por WhatsApp</dd></div>
+          <div><dt>Reserva</dt><dd>Se confirma con el pago</dd></div>
+        </dl>
+      </div>
+      <svg class="hero__edge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40c120 36 240 36 360 0s240-36 360 0 240 36 360 0 240-36 360 0v40H0z" fill="#fbfefd"/>
+      </svg>
+    </section>
+
+    <!-- La quinta -->
+    <section class="section" id="quinta">
+      <div class="wrap split">
+        <div class="split__intro">
+          <h2>Todo lo que necesitás para quedarte el día entero</h2>
+          <p>Un lugar amplio al aire libre, pensado para que el grupo se instale, cocine y se relaje sin apuros. Vos traés la comida y las ganas de pasarla bien.</p>
+        </div>
+        <ul class="amenities" id="amenities"></ul>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="section section--tint" id="galeria">
+      <div class="wrap">
+        <h2>Conocé la quinta</h2>
+        <div class="mosaic" id="mosaic"></div>
+      </div>
+    </section>
+
+    <!-- Cómo reservar -->
+    <section class="section" id="como">
+      <div class="wrap">
+        <h2>Reservar es simple</h2>
+        <ol class="steps">
+          <li>
+            <span class="steps__n" aria-hidden="true">1</span>
+            <h3>Elegí tus fechas</h3>
+            <p>Mirá el calendario y marcá el día de entrada y el de salida. Los días tachados ya están ocupados.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">2</span>
+            <h3>Dejá tus datos</h3>
+            <p>Tu nombre, tu número de WhatsApp y cuántas personas van. Tu pedido queda en espera y nadie más puede pedir esos días.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">3</span>
+            <h3>Confirmá el pago por WhatsApp</h3>
+            <p>Los dueños te escriben para coordinar el pago. Cuando lo confirman, la fecha queda reservada para vos.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Reservar -->
+    <section class="section section--water" id="reservar">
+      <div class="wrap">
+        <h2>Elegí tus fechas</h2>
+        <p class="lead">Tocá el día de entrada y después el de salida. Para un solo día, tocá solo ese.</p>
+
+        <div class="booking">
+          <div class="panel">
+            <div id="calendar" class="cal" aria-label="Calendario de disponibilidad"></div>
+            <ul class="legend">
+              <li><i class="dot dot--free"></i>Libre</li>
+              <li><i class="dot dot--sel"></i>Tu selección</li>
+              <li><i class="dot dot--wait"></i>En espera</li>
+              <li><i class="dot dot--busy"></i>Ocupado</li>
+            </ul>
+          </div>
+
+          <form class="panel form" id="form" novalidate>
+            <div class="summary summary--empty" id="summary" aria-live="polite">Todavía no elegiste fechas.</div>
+
+            <label for="name">Nombre y apellido</label>
+            <input id="name" name="name" autocomplete="name" maxlength="80" required>
+
+            <label for="phone">Tu número de WhatsApp</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0981 123 456" required>
+            <p class="hint">Te escribimos a este número para confirmar el pago.</p>
+
+            <label for="guests">Cantidad de personas</label>
+            <input id="guests" name="guests" type="number" min="1" max="200" value="10" inputmode="numeric" required>
+
+            <div class="hp" aria-hidden="true"><label>Sitio web <input id="website" tabindex="-1" autocomplete="off"></label></div>
+
+            <button class="btn btn--lg btn--block" id="send" type="submit" disabled>Reservar esta fecha</button>
+            <div id="msg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="section" id="ubicacion">
+      <div class="wrap split">
+        <div class="split__intro">
+          <h2>Cómo llegar</h2>
+          <p id="address">Ciudad, Departamento, Paraguay</p>
+          <a class="btn btn--outline" id="mapsLink" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+        <div class="mapbox" aria-hidden="true">
+          <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="240" fill="#dff4f2"/>
+            <path d="M-10 170c60-40 110 10 170-20s90-70 150-50 70 40 100 20" fill="none" stroke="#bfe6e2" stroke-width="22" stroke-linecap="round"/>
+            <path d="M0 60h400M0 130h400M90 0v240M250 0v240" stroke="#fff" stroke-width="7"/>
+            <g transform="translate(200 112)">
+              <path d="M0 0c-18-22-26-34-26-46a26 26 0 1 1 52 0c0 12-8 24-26 46z" fill="#c92f68"/>
+              <circle cx="0" cy="-46" r="9" fill="#fff"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas -->
+    <section class="section section--tint" id="preguntas">
+      <div class="wrap faq">
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Cuándo queda reservada mi fecha?</summary>
+          <p>Cuando los dueños confirman tu pago. Hasta ese momento tu pedido está en espera y esos días no se pueden pedir de nuevo.</p>
+        </details>
+        <details>
+          <summary>¿Cuántos días seguidos puedo pedir?</summary>
+          <p>Hasta <span data-max-days>14</span> días seguidos. Si necesitás más, escribinos por WhatsApp.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p id="faqPrice">Consultá el precio por WhatsApp.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si la fecha ya no está libre?</summary>
+          <p>El calendario se actualiza solo. Si alguien pidió esos días antes que vos, te avisamos al enviar el pedido y podés elegir otra fecha.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <strong>Quinta Oasis</strong>
+      <span id="footAddress">Paraguay</span>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+    <div class="wrap footer__credit">Desarrollado por Sclat Tech</div>
+  </footer>
+
+  <!-- Visor de fotos a pantalla completa -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Fotos de la quinta">
+    <button type="button" class="lb__btn lb__close" id="lbClose" aria-label="Cerrar">×</button>
+    <p class="lb__count" id="lbCount"></p>
+    <button type="button" class="lb__btn lb__nav lb__prev" id="lbPrev" aria-label="Foto anterior">‹</button>
+    <figure class="lb__stage">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button type="button" class="lb__btn lb__nav lb__next" id="lbNext" aria-label="Foto siguiente">›</button>
+  </div>
+
+  <!-- Ventanita que aparece después de completar el formulario -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__box">
+      <button type="button" class="modal__close" id="modalClose" aria-label="Cerrar">×</button>
+      <h3 id="modalTitle">¡Ya casi es tuya esa fecha!</h3>
+      <p id="modalText"></p>
+      <p class="modal__ask">Elegí con quién querés confirmar el pago por WhatsApp:</p>
+      <div class="modal__contacts" id="modalContacts"></div>
+      <p class="modal__demo" id="modalDemo" hidden><strong>Modo demostración:</strong> este pedido no se guardó.</p>
+    </div>
+  </div>
+
+  <div class="wa-wrap" id="waWrap">
+    <div class="wa-menu" id="waMenu" hidden>
+      <p class="wa-menu__title">¿Con quién querés hablar?</p>
+      <div id="waLinks"></div>
+    </div>
+  <button type="button" class="wa" id="waFloat" aria-expanded="false" aria-controls="waMenu" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.200 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 .9-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l2 .9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>
+    <span>WhatsApp</span>
+  </button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/firebase-core.js"></script>
+  <script src="js/booking-service.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
